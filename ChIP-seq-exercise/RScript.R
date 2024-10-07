@@ -23,11 +23,11 @@ suppressMessages(ggsave("covplot_TBP.png", plot = p1, width=20, height=5, dpi=30
 #suppressMessages(ggsave("covplot_NFYA.png", plot = p2, width=20, height=5, dpi=300))
 
 #message("Plot Venn diagram...")
-#peakAnnoList <- lapply(samplefiles, annotatePeak, TxDb=txdb, 
+peakAnnoList <- lapply(samplefiles, annotatePeak, TxDb=txdb, 
                        tssRegion=c(-3000, 3000), verbose=FALSE)
 
-#p3 <-plotAnnoBar(peakAnnoList)
-#suppressMessages(ggsave("plotAnnoBar.png", plot = p3))
+p3 <-plotAnnoBar(peakAnnoList)
+suppressMessages(ggsave("plotAnnoBar.png", plot = p3))
 
 #genes = lapply(peakAnnoList, function(i) as.data.frame(i)$geneId)
 #png("vennplot.png")
